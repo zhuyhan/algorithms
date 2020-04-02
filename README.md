@@ -6,6 +6,6 @@
 
 ## 数据库
 
-- [Mysql](https://github.com/CyC2018/CS-Notes)
+- [Mysql](https://github.com/zhuyhan/learning/docs/mysql)
 
-- [Nosql](https://github.com/CyC2018/CS-Notes)
+- [Nosql](https://github.com/zhuyhan/learning/docs/nosql)
