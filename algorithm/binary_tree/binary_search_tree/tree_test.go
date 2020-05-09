@@ -46,10 +46,6 @@ func testTree4() (*Tree, *Node) {
 }
 
 func TestTree_PreOrderTraversal(t1 *testing.T) {
-	type fields struct {
-		root *Node
-		size int
-	}
 	tests := []struct {
 		name   string
 		fields *Tree
@@ -76,10 +72,6 @@ func TestTree_PreOrderTraversal(t1 *testing.T) {
 }
 
 func TestTree_InOrderTraversal(t1 *testing.T) {
-	type fields struct {
-		root *Node
-		size int
-	}
 	tests := []struct {
 		name   string
 		fields *Tree
@@ -106,10 +98,6 @@ func TestTree_InOrderTraversal(t1 *testing.T) {
 }
 
 func TestTree_PostOrderTraversal(t1 *testing.T) {
-	type fields struct {
-		root *Node
-		size int
-	}
 	tests := []struct {
 		name   string
 		fields *Tree
@@ -136,10 +124,6 @@ func TestTree_PostOrderTraversal(t1 *testing.T) {
 }
 
 func TestTree_LevelOrderTraversal(t1 *testing.T) {
-	type fields struct {
-		root *Node
-		size int
-	}
 	tests := []struct {
 		name   string
 		fields *Tree
@@ -166,10 +150,6 @@ func TestTree_LevelOrderTraversal(t1 *testing.T) {
 }
 
 func TestTree_Height(t1 *testing.T) {
-	type fields struct {
-		root *Node
-		size int
-	}
 	tests := []struct {
 		name   string
 		fields *Tree
@@ -230,10 +210,6 @@ func TestTree_Height2(t1 *testing.T) {
 }
 
 func TestTree_IsComplete(t1 *testing.T) {
-	type fields struct {
-		root *Node
-		size int
-	}
 	tests := []struct {
 		name   string
 		fields *Tree
@@ -343,7 +319,6 @@ func TestTree_Successor(t1 *testing.T) {
 }
 
 func TestTree_GetNode(t1 *testing.T) {
-
 	type args struct {
 		element int
 	}
@@ -381,10 +356,6 @@ func TestTree_GetNode(t1 *testing.T) {
 }
 
 func TestTree_Remove(t1 *testing.T) {
-	type fields struct {
-		root *Node
-		size int
-	}
 	type args struct {
 		element int
 	}

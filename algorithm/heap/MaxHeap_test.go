@@ -6,7 +6,6 @@ import (
 )
 
 func buildHeap(list []int) *MaxHeap {
-
 	heap := Init()
 	for _, v := range list {
 		heap.Add(v)

@@ -18,10 +18,3 @@ func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 }
 
 //法二：中序遍历
-
-func reverseLeftWords(s string, n int) string {
-	if n < 1 || n >= len(s) {
-		return s
-	}
-	return s[n:] + s[:n]
-}

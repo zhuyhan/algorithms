@@ -4,11 +4,13 @@ import (
 	"fmt"
 )
 
+//Node 节点
 type Node struct {
 	element             int
 	left, right, parent *Node
 }
 
+//Tree 二叉查找树
 type Tree struct {
 	root *Node
 	size int
@@ -18,6 +20,7 @@ func NewTree() *Tree {
 	return &Tree{}
 }
 
+//Add 添加
 func (t *Tree) Add(element int) bool {
 	//element如果是interface{}类型；要判断nil
 	//根结点判断
@@ -138,7 +141,7 @@ func (t *Tree) Height() int {
 	return height
 }
 
-//Height 树的高度（递归）
+//Height2 树的高度（递归）
 func (t *Tree) Height2(root *Node) int {
 	if root == nil {
 		return 0
@@ -203,7 +206,7 @@ func hasTwoChildren(root *Node) bool {
 	return false
 }
 
-//判断前驱节点
+//Predecessor 判断前驱节点
 func (t *Tree) Predecessor(node *Node) *Node {
 	fmt.Println(node)
 	if node == nil {
@@ -231,7 +234,7 @@ func (t *Tree) Predecessor(node *Node) *Node {
 	return pre
 }
 
-//判断后驱节点
+//Successor 判断后驱节点
 func (t *Tree) Successor(node *Node) *Node {
 	fmt.Println(node)
 	if node == nil {
@@ -260,7 +263,7 @@ func (t *Tree) Successor(node *Node) *Node {
 	return pre
 }
 
-//查找结点
+//GetNode 查找结点
 func (t *Tree) GetNode(element int) *Node {
 	node := t.root
 	for node != nil {
@@ -277,7 +280,7 @@ func (t *Tree) GetNode(element int) *Node {
 	return nil
 }
 
-//删除结点
+//Remove 删除结点
 func (t *Tree) Remove(element int) bool {
 	//获取节点
 	node := t.GetNode(element)

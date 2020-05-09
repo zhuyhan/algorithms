@@ -8,7 +8,7 @@ func maxDepth1(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	return 1 + max104(maxDepth(root.Left), maxDepth(root.Right))
+	return 1 + max104(maxDepth1(root.Left), maxDepth1(root.Right))
 }
 func max104(l, r int) int {
 	if l > r {

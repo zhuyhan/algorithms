@@ -19,6 +19,7 @@ func NewTree() *Tree {
 	return &Tree{}
 }
 
+//Add 添加
 func (t *Tree) Add(element int64) bool {
 	//element如果是interface{}类型；要判断nil
 	//根结点判断
@@ -46,6 +47,7 @@ func (t *Tree) Add(element int64) bool {
 	return true
 }
 
+//Remove 删除节点
 func (t *Tree) Remove(element int64) bool {
 	node, err := t.remove(element)
 	fmt.Println(node)
@@ -314,7 +316,7 @@ func (t *Tree) afterRemove(n *Node) {
 	}
 }
 
-//查找结点
+//GetNode 查找结点
 func (t *Tree) GetNode(element int64) *Node {
 	node := t.root
 	for node != nil {
@@ -339,7 +341,7 @@ func hasTwoChildren(root *Node) bool {
 	return false
 }
 
-//判断前驱节点
+//Predecessor 判断前驱节点
 func (t *Tree) Predecessor(node *Node) *Node {
 	fmt.Println(node)
 	if node == nil {
@@ -363,11 +365,10 @@ func (t *Tree) Predecessor(node *Node) *Node {
 			parent = parent.parent
 		}
 	}
-	fmt.Println(pre)
 	return pre
 }
 
-//判断后驱节点
+//Successor 判断后驱节点
 func (t *Tree) Successor(node *Node) *Node {
 	fmt.Println(node)
 	if node == nil {

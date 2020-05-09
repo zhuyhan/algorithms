@@ -192,9 +192,6 @@ func TestLinkList_GetAll(t *testing.T) {
 }
 
 func TestLinkList_Insert(t *testing.T) {
-	type fields struct {
-		head *Node
-	}
 	type args struct {
 		index int
 		elem  interface{}

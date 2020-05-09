@@ -101,6 +101,7 @@ func (n *Node) isRightChild() bool {
 	return false
 }
 
+//Add 添加
 func (t *Tree) Add(element int64) {
 	//添加的是根节点
 	if t.root == nil {
@@ -237,6 +238,7 @@ func (t *Tree) afterRotate(grand, parent, child *Node) {
 	grand.parent = parent
 }
 
+//Remove 移除
 func (t *Tree) Remove(element int64) bool {
 	node, err := t.remove(element)
 	fmt.Println(node)
@@ -401,7 +403,7 @@ func (t *Tree) afterRemove(n, r *Node) {
 
 }
 
-//查找结点
+//GetNode 查找结点
 func (t *Tree) GetNode(element int64) *Node {
 	node := t.root
 	for node != nil {
@@ -426,7 +428,7 @@ func hasTwoChildren(root *Node) bool {
 	return false
 }
 
-//判断前驱节点
+//Predecessor 判断前驱节点
 func (t *Tree) Predecessor(node *Node) *Node {
 	fmt.Println(node)
 	if node == nil {
@@ -454,7 +456,7 @@ func (t *Tree) Predecessor(node *Node) *Node {
 	return pre
 }
 
-//判断后驱节点
+//Successor 判断后驱节点
 func (t *Tree) Successor(node *Node) *Node {
 	fmt.Println(node)
 	if node == nil {
@@ -508,6 +510,7 @@ func (t *Tree) LevelOrderTraversal() []NodeValue {
 	return list
 }
 
+//Clear 清除树
 func (t *Tree) Clear() {
 	t.root = nil
 }
