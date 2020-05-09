@@ -1,0 +1,19 @@
+language: go
+sudo: required
+go:
+- 1.14.2
+git:
+  depth: 1
+install: true
+notifications:
+  email: false
+before_script:
+- curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh
+  | sh -s -- -b $GOPATH/bin v1.25.1
+script:
+- golangci-lint run
+- go test -v -race ./...
+env:
+  global:
+  - secure: RKO6tMJZ/YCG40Fmy/vqQ5I4/yWWZpFMCpli1dsLnOkRlb9L5AnHlQECCYFbi1xXkVAM2jTKZboIxkmdo3RUK1pR1JsYhhAouFO5/3naU+lRpta0GrFd2BjPwvhV/6t4lsbReno//AY10vFeBiPeK7XFbYoQ2A6wQRkl2rLtKB1otiJd6YR9oSjeZHVMsQ/mcZUKT1f7vfPyNSbv18jIyV6+JU7MGNXqDS0Z1EAKF2yZZMrbOXwy42ZvoQshchb8nZ/xTxiTzX22KKcrPANUIxGyfw3Yc46jKWYg1RFaGxV7iTbOaZAcALOErKXoy2YQffyuzk1h/QYPKiV8ESrnDdMwUZtU0JQ9vHZBBK815TOVZOpKxtnLOOS6aEA3WWXGM7pwKN5pdG0948njLF9ODUeHHAIXBBigachg1pX5oZ4ApjVagIjMGNnKkc6mlv9YhQkNBbko5FBgnXBbVI4RRnrj6uQC0NriEteVK81+h2M8rGbENIvH1aOBfn1TtLws10e/49cEQPpBr2lbI8uTumUwMNdczK5LSUREtLHj52c5ct0X4gnJThyw+geiZRUH/ymNTfq2OGLvLRO6wGIfsK9ZMb/Y8Yn7+agQKa1TGjqXS2mQvTmBVjaKJ50Gwr21sdhfwpdDPFrkcsgMCcvbeX1bC7K31KV8if/dWu7SIwI=
+  - secure: N/BHgtgzRB87vwHMAzzub6MDZHvad2BHAoI0zukJfR5V9qy98JRivALN99ZTfDwjNkxHkDA9y5GDz3vbgHfP/kmnMLlHIzgdnYMLZCktBb48NTDqZN2z3O2afXgqRT/pHtbX3KWmNIRfHmJqANpkTZVfdrUY8slqDqR/p4GacpY+zP9eOJLWqotCM5i60KCSta+tNUTPDfgyoSbqsFeASz+Nt4GYMaOLnyg1vIGPRppj6bugEA7gnNguwNLQjCQrTWwrBNs8l0edg0AUBvE+XvANV2BstIcFKdACaO0m1xxjfjhPYjR2qACahAVnYQ92rhAjwpV4q1MTxUIVt74LQgUsbhIwqi1NTJEHxV9cLd9EokAzyyPmAf6pVpYvTAuKzz/VSmstszAUSmw4VSjwc+Rfm0dF8skNFzgUk6VMzl1ER6MTDtVgEimAU7cuG/ttW/00+zFufMPLHS4aPIrzKamtfj1rvdER+u30ZIxexrlENtYsYfNY7JtlEk0CemzG+/aNqECj0AUEi6kmDXIfQCQZW1ogQ5esZktn9a3eULB6IR7fV5Y3yo9UiAT4aSzqKDpnDwyX+2JPbagabQAJtmHGeGivRJl8MN1FU/N7v/Ui3lbIi7ovFD9Xhs5vVBfBBw/Ek7tsUBAchJY/RB9LnHu5cJDNXV66I/3VwKX2Hes=

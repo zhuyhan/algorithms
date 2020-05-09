@@ -2,10 +2,12 @@
 
 ## 数据结构
 - 线性数据结构
-   - [动态数组](algorithm/array)
-   - [链表](algorithm/list)
-   - [栈](algorithm/stack)
-   - [队列](algorithm/queque)
-   - [二叉树](algorithm/binary_tree)
+   - [动态数组](algorithm/array_list)
+- [链表](algorithm/list)
+- [栈](algorithm/stack)
+- [队列](algorithm/queque)
+- [二叉树](algorithm/binary_tree)
     
    
+## LeetCode题解
+

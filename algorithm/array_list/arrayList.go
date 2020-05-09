@@ -1,4 +1,4 @@
-package array
+package array_list
 
 //动态数组数据结构实现
 
@@ -32,6 +32,7 @@ func (a *Array) IsEmpty() bool {
 	return a.size == 0
 }
 
+//Get 通过索引获取元素
 func (a *Array) Get(index int) (int, error) {
 	if index < 0 || index > a.size {
 		return 0, errors.New(fmt.Sprintln("Index:", index, "; Size:", a.size))
@@ -83,12 +84,12 @@ func (a *Array) Remove(index int) bool {
 	return true
 }
 
-//Clear 清楚数据
+//Clear 清除数据
 func (a *Array) Clear() {
 	a.size = 0
-	//a.element = nil
 }
 
+//GetAll 获取所有数据
 func (a *Array) GetAll() []int {
 	return a.element[:a.size]
 }
