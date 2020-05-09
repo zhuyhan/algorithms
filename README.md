@@ -1,4 +1,5 @@
 分享一些数据结构和算法的golang实现，还有一些LeetCode的解题
+[![Build Status](https://travis-ci.com/zhuyhan/algorithms.svg?branch=master)](https://travis-ci.com/zhuyhan/algorithms)
 
 ## 数据结构
 - 线性数据结构

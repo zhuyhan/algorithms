@@ -11,6 +11,10 @@ before_script:
 - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh
   | sh -s -- -b $GOPATH/bin v1.25.1
 script:
+- overalls -project=github.com/yangwenmai/gitfeed -covermode=count -ignore='.git,_vendor'
+- goveralls -coverprofile=overalls.coverprofile -service=travis-ci -repotoken $COVERALLS_TOKEN
+- go test -race -coverprofile=coverage.txt -covermode=atomic # 注意要新增這一行，否則不會出現 codecov bot
+- golangci-lint run
 - go test -v -race ./...
 env:
   global:
