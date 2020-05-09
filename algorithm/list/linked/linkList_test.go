@@ -68,7 +68,7 @@ func TestLinkList_Delete(t *testing.T) {
 			fields:   setList(),
 			args:     args{index: 0},
 			want:     true,
-			wantList: []interface{}{10, 12, 13, 14},
+			wantList: []interface{}{11, 12, 13, 14},
 		},
 		{
 			name:     "删除-索引不存在",
