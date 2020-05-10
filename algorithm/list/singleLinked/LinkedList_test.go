@@ -1,11 +1,11 @@
-package linked
+package singleLinked
 
 import (
 	"reflect"
 	"testing"
 )
 
-func setList() *LinkList {
+func setList() *List {
 	list := NewLinkList()
 	list.Add(10)
 	list.Add(11)
@@ -22,7 +22,7 @@ func TestLinkList_Add(t *testing.T) {
 	}
 	tests := []struct {
 		name     string
-		fields   *LinkList
+		fields   *List
 		args     args
 		want     bool
 		wantList []interface{}
@@ -38,7 +38,7 @@ func TestLinkList_Add(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l := &LinkList{
+			l := &List{
 				head: tt.fields.head,
 			}
 			if got := l.Add(tt.args.elem); got != tt.want {
@@ -57,7 +57,7 @@ func TestLinkList_Delete(t *testing.T) {
 	}
 	tests := []struct {
 		name     string
-		fields   *LinkList
+		fields   *List
 		args     args
 		want     bool
 		wantList []interface{}
@@ -80,7 +80,7 @@ func TestLinkList_Delete(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l := &LinkList{
+			l := &List{
 				head: tt.fields.head,
 			}
 			if got := l.Delete(tt.args.index); got != tt.want {
@@ -100,7 +100,7 @@ func TestLinkList_GetData(t *testing.T) {
 	}
 	tests := []struct {
 		name   string
-		fields *LinkList
+		fields *List
 		args   args
 		want   interface{}
 	}{
@@ -124,7 +124,7 @@ func TestLinkList_GetData(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l := &LinkList{
+			l := &List{
 				head: tt.fields.head,
 			}
 			if got := l.GetData(tt.args.index); !reflect.DeepEqual(got, tt.want) {
@@ -140,7 +140,7 @@ func TestLinkList_Length(t *testing.T) {
 	}
 	tests := []struct {
 		name   string
-		fields *LinkList
+		fields *List
 		want   int
 	}{
 		// TODO: Add test cases.
@@ -152,7 +152,7 @@ func TestLinkList_Length(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l := &LinkList{
+			l := &List{
 				head: tt.fields.head,
 			}
 			if got := l.Length(); got != tt.want {
@@ -169,7 +169,7 @@ func TestLinkList_GetAll(t *testing.T) {
 	}
 	tests := []struct {
 		name   string
-		fields *LinkList
+		fields *List
 		want   []interface{}
 	}{
 		// TODO: Add test cases.
@@ -181,7 +181,7 @@ func TestLinkList_GetAll(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l := &LinkList{
+			l := &List{
 				head: tt.fields.head,
 			}
 			if got := l.GetAll(); !reflect.DeepEqual(got, tt.want) {
@@ -198,7 +198,7 @@ func TestLinkList_Insert(t *testing.T) {
 	}
 	tests := []struct {
 		name     string
-		fields   *LinkList
+		fields   *List
 		args     args
 		wantList []interface{}
 		want     bool
@@ -247,7 +247,7 @@ func TestLinkList_Insert(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l := &LinkList{
+			l := &List{
 				head: tt.fields.head,
 			}
 			if got := l.Insert(tt.args.index, tt.args.elem); got != tt.want {

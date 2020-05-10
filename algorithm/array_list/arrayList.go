@@ -1,6 +1,6 @@
 package array_list
 
-//动态数组数据结构实现
+//动态数组的数据结构实现
 
 import (
 	"errors"

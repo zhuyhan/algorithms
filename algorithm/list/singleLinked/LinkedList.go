@@ -1,4 +1,4 @@
-package linked
+package singleLinked
 
 import (
 	"fmt"
@@ -13,22 +13,22 @@ type Node struct {
 }
 
 //单向链表
-type LinkList struct {
+type List struct {
 	head *Node
 }
 
-func NewLinkList() *LinkList {
+func NewLinkList() *List {
 	head := &Node{
 		data: 0,
 		next: nil,
 	}
-	return &LinkList{
+	return &List{
 		head: head,
 	}
 }
 
 //Append 尾部添加数据
-func (l *LinkList) Add(elem interface{}) bool {
+func (l *List) Add(elem interface{}) bool {
 	//构造要插入的结点
 	node := &Node{
 		data: elem,
@@ -44,7 +44,7 @@ func (l *LinkList) Add(elem interface{}) bool {
 }
 
 //Insert 往新结点插入
-func (l *LinkList) Insert(index int, elem interface{}) bool {
+func (l *List) Insert(index int, elem interface{}) bool {
 	if index < 0 || index > l.Length() {
 		fmt.Println("error:index=", index)
 		return false
@@ -64,7 +64,7 @@ func (l *LinkList) Insert(index int, elem interface{}) bool {
 }
 
 //Length 长度
-func (l *LinkList) Length() int {
+func (l *List) Length() int {
 	currentNode := l.head
 	length := 0
 	for currentNode.next != nil {
@@ -75,7 +75,7 @@ func (l *LinkList) Length() int {
 }
 
 //Delete 指定删除索引
-func (l *LinkList) Delete(index int) bool {
+func (l *List) Delete(index int) bool {
 	//判断index是否合法
 	if index < 0 || index > l.Length()-1 {
 		fmt.Println("删除位序不正确")
@@ -90,7 +90,7 @@ func (l *LinkList) Delete(index int) bool {
 }
 
 //GetData 通过索引，获取元素值
-func (l *LinkList) GetData(index int) interface{} {
+func (l *List) GetData(index int) interface{} {
 	if index < 0 || index > l.Length()-1 {
 		fmt.Println("位序不正确")
 		return false
@@ -102,7 +102,7 @@ func (l *LinkList) GetData(index int) interface{} {
 	return currentNode.data
 }
 
-func (l *LinkList) GetAll() []interface{} {
+func (l *List) GetAll() []interface{} {
 	var list []interface{}
 	currentNode := l.head
 	for currentNode.next != nil {
