@@ -28,6 +28,19 @@
   - [TOP K问题](algorithm/heap/TopK.go)
 - [字典树](algorithm/trie)
 - [优先级队列](algorithm/PriorityQueue)
+
+## 算法部分
+- 排序
+   - [快速排序](algorithm/sort/bubbleSort.go)
+   - [选择排序](algorithm/sort/selectionSort.go)
+   - [插入排序](algorithm/sort/insertSort.go)
+   - [堆排序](algorithm/sort/heapSort.go)
+   - [希尔排序](algorithm/sort/ShellSort.go)
+   - [归并排序](algorithm/sort/mergeSort.go)
+   - [快速排序](algorithm/sort/quickSort.go)
+   - [计数排序](algorithm/sort/countingSort.go)
+   - [基数排序](algorithm/sort/radixSort.go)
+   
    
 ## LeetCode题解
 
