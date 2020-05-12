@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-//双向链表
+//双向链表的数据结构实现
 
 type Node struct {
 	next, prev *Node
@@ -139,6 +139,35 @@ func (l *List) Remove(index int) error {
 	return nil
 }
 
+//Del 删除值所在的节点
+//todo 处理头尾节点问题
+func (l *List) Del(value interface{}) error {
+	if l.len == 0 {
+		return errors.New("list is empty")
+	}
+
+	if l.first.Value == value {
+		l.first = l.first.next
+		l.len--
+		return nil
+	}
+
+	found := 0
+	for n := l.first; n != nil; n = n.next {
+		if *n.Value.(*Node) == value && found == 0 {
+			n.next.prev, n.prev.next = n.prev, n.next
+			l.len--
+			found++
+		}
+	}
+
+	if found == 0 {
+		return errors.New("Node not found")
+	}
+
+	return nil
+}
+
 //Clear 清空链表
 func (l *List) Clear() {
 	l.Init()
@@ -153,4 +182,10 @@ func (l *List) GetAll() []interface{} {
 		node = node.next
 	}
 	return result
+}
+
+func (l *List) Each(f func(node Node)) {
+	for node := l.first; node != nil; node = node.next {
+		f(*node)
+	}
 }
