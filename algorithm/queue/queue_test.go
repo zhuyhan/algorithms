@@ -16,7 +16,7 @@ func TestQueue_enQueue(t *testing.T) {
 		t.Error("queue is error")
 	}
 	num, err = queue.deQueue()
-	if num == 1 || err != nil {
-		t.Error("queue is error")
+	if num != 1 || err != nil {
+		t.Error("queue is error", num, err)
 	}
 }
