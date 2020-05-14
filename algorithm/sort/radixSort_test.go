@@ -17,9 +17,9 @@ func Test_radixSort(t *testing.T) {
 		{
 			name: "计数排序",
 			args: args{
-				nums: []int{5, 6, 1, 1199, 99, 99, 4},
+				nums: []int{5, 6, 1, 0, 1199, 99, 99, 4},
 			},
-			want: []int{1, 4, 5, 6, 99, 99, 1199},
+			want: []int{0, 1, 4, 5, 6, 99, 99, 1199},
 		},
 	}
 	for _, tt := range tests {
